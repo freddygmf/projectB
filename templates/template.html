@@ -8,8 +8,18 @@
     </head>
     <body>
         <header>
-            <p class="titulo_projeto">Project<strong>B</strong></p>
+            <div class="titulo_projeto">
+                <p>Project<strong>B</strong></p>
+            </div>
+            <div class="nome-pagina">
+                <p>{{ nome_pagina }}</p>
+            </div>
         </header>
-        {% block conteudo %}{% endblock %}
+        <main>
+            {% block conteudo %}{% endblock %}
+        </main>
+        <footer>
+            <p class="footer-msg">Desenvolvido por freddygmf©.</p>
+        </footer>
     </body>
 </html>

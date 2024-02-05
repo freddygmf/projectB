@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
-from decimal import Decimal
+from datetime import datetime
 import locale
 
 # INICIALIZAÇÃO DA APLICAÇÃO
@@ -38,11 +38,14 @@ def index():
     total_valores = db.session.query(func.sum(Carteira1.valor)).scalar() or 0.0
     total_valores = locale.currency(total_valores, grouping=True)
 
-    # Formatando os valores para REAL
+    # Formatando os valores para REAL e DATA para o padrão Brasileiro
     for item in dados_carteira:
         item.valor = locale.currency(item.valor, grouping=True)
+        data_formatada = f"{str(item.dia.day).zfill(2)}/{str(item.dia.month).zfill(2)}/{item.dia.year}"
+        item.data_formatada = data_formatada
 
-    return render_template('app.html', carteira=dados_carteira, total_valores=total_valores)
+    nome_pagina = "Extrato"
+    return render_template('app.html', carteira=dados_carteira, total_valores=total_valores, nome_pagina=nome_pagina)
 
 # ADICIONAR NOVAS INFORMAÇÕES
 @app.route('/novo', methods=['GET', 'POST'])
@@ -55,7 +58,9 @@ def novo_item():
         db.session.add(novo_valor)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('novo.html')
+    
+    nome_pagina = "Adicionar Transação"
+    return render_template('novo.html', nome_pagina=nome_pagina)
 
 # EDITAR INFORMAÇÕES SALVAS
 @app.route('/edit/<int:id>', methods=["GET", 'POST'])

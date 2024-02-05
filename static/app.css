@@ -1,54 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-td, th {
-  border: 1px solid rgb(190, 190, 190);
-  padding: 10px;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
-td {
-  text-align: center;
+header {
+  padding: 1em 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  box-shadow: 0 0 5px black;
 }
 
-tr:nth-child(even) {
-  background-color: #eee;
+main {
+  margin: 0 10%;
+  padding: 1em 1em;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 0 10px black;
 }
 
-th[scope='col'] {
-  background-color: #696969;
-  color: #fff;
+footer {
+  padding: 1em 12%;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 5px black;
 }
 
-th[scope='row'] {
-  background-color: #d7d9f2;
-}
-
-caption {
-  padding: 10px;
-  caption-side: bottom;
-}
-
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(200, 200, 200);
-  letter-spacing: 1px;
-  font-family: sans-serif;
-  font-size: 0.8rem;
+strong {
+  color: green;
 }
 
 .titulo_projeto {
-  font-family: "Dancing Script", cursive;
-  font-size: 1000;
-  font-optical-sizing: auto;
-  font-weight: 400;
+  color: white;
+  font-size: 2em;
+}
+
+.nome-pagina {
+  color: white;
+  font-size: 2em;
+}
+
+.extrato-img {
+  width: 50px;
+  height: 50px;
+}
+
+.caixa-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.caixa-total-dinheiro {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.caixa-extrato {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+table {
+  font-family: "Merriweather", serif;
+}
+
+.extrato-titulo {
+  padding: 1em;
+  border-bottom: 1px solid black;
+  font-weight: 700;
   font-style: normal;
+  font-size: 1.2em;
+}
+
+.extrato-nome {
+  text-align: left;
+}
+
+.extrato-valor {
+  text-align: right;
+}
+
+.extrato-botao {
+  background-color: white;
+  border: none;
+}
+
+.extrato-botao-img {
+  width: 25px;
+  height: 25spx;
+  padding: 0 5px;
+}
+
+.footer-msg {
+  font-family: "Merriweather", serif;
+  text-align: center;
 }
