@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<div class="caixa-menu">
+    <div>
+        <a href="{{ url_for('novo_item') }}"><img class="extrato-img" src="../static/svg/add-row-svgrepo-com.svg"></a>
+    </div>
+    <div class="caixa-total-dinheiro">
+        <img class="extrato-img" src="../static/svg/data-svgrepo-com.svg">
+        <p>{{ total_valores }}</p>
+    </div>
+</div>
+<div class="caixa-extrato">    
+    <table>
+        <tr>
+            <th class="extrato-titulo">Tipo de Transação</th>
+            <th class="extrato-titulo">Data da Transação</th>
+            <th class="extrato-titulo">Valor da Transação</th>
+        </tr>
+        {% for item in carteira %}
+        <tr>
+            <th class="extrato-nome">{{item.nome}}</th>
+            <td>{{item.data_formatada}}</td>
+            <td class="extrato-valor">{{item.valor}}</td>
+            <td>
+                <form action="{{ url_for('editar_item', id=item.id) }}" method="get">
+                    <button class="extrato-botao" type="submit"><img class="extrato-botao-img" src="../static/svg/edit-pencil-line-01-svgrepo-com.svg"></button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ url_for('excluir_item', id=item.id) }}" method="post">
+                    <button class="extrato-botao" type="submit"><img class="extrato-botao-img" src="../static/svg/close-circle-svgrepo-com.svg"></button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
