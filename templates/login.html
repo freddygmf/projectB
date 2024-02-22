@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div>
+        <div><a href="{{ url_for('novo_usuario') }}">Cadastrar</a></div>
+    </div>
+</header>
+<main>
+    <h1>{{ nome_pagina }}</h1>
+    <form action="{{ url_for('autenticar') }}" method="post">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <input type="submit" value="Logar">
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div>
+        <div><a class="link_header" href="{{ url_for('deslogar') }}">Sair</a></div>
+    </div>
+</header>
+<main>
+    <div class="caixa-menu">
+        <div>
+            <a href="{{ url_for('novo_cc') }}"><img class="extrato-img" src="../static/svg/add-row-svgrepo-com.svg"></a>
+        </div>
+        <div class="caixa-total-dinheiro">
+            <img class="extrato-img" src="../static/svg/data-svgrepo-com.svg">
+            <p>{{ total_limite }}</p>
+        </div>
+    </div>
+    <div class="display_cc">
+    {% for item in dados_cc %}
+    <a class="botao_cc" href="{{ url_for('editar_cc', id=item.idcc) }}">
+        <div class="caixa_cc">
+            <div class="caixa_info_cc">   
+                <div>
+                    <div>
+                        <p class="bandeira_cc">{{ item.bandeira }}</p>
+                    </div>
+                    <div>
+                        <p>{{ item.banco }}</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="lastd_cc">{{ item.lastd }}</p>
+                </div>
+            </div>
+            <div class="caixa_dados_cc">
+                <div>
+                    <div>
+                        <p>{{ usuario }}</p>
+                    </div>
+                    <div>
+                        <p>{{ item.validade }}</p>
+                    </div>
+                </div>
+                <div class="caixa_limite_cc">
+                    <div>
+                        <p class="tipo_limite_cc">Limite Utilizado</p>
+                        <p>R$ 0,00</p>
+                    </div>
+                    <div>
+                        <p class="tipo_limite_cc">Limite Disponível</p>
+                        <p>R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    </div>
+
+</main>
+{% endblock %}

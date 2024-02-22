@@ -7,17 +7,24 @@
         <title>ProjetoB</title>
     </head>
     <body>
-        <header>
-            <div class="titulo_projeto">
-                <p>Project<strong>B</strong></p>
-            </div>
-            <div class="nome-pagina">
-                <p>{{ nome_pagina }}</p>
-            </div>
-        </header>
-        <main>
+            <script>
+                setTimeout(function() {
+                    var flashMessages = document.querySelectorAll('.flash-message');
+                    flashMessages.forEach(function(message) {
+                        message.remove();
+                    });
+                }, 5000);
+            </script>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li class="flash-message">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
             {% block conteudo %}{% endblock %}
-        </main>
         <footer>
             <p class="footer-msg">Desenvolvido por freddygmf©.</p>
         </footer>

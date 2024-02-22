@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div class="caixa_link_header">
+        <div><a class="link_header" href="{{ url_for('deslogar') }}">Sair</a></div>
+    </div>
+</header>
+
+<main>
+    <h1>ProjetoB</h1>
+    <form action="{{ url_for('editar_cc', id=item.idcc) }}" method="post">
+        <label for="banco">Nome:</label>
+        <input type="text" name="banco" value="{{ item.banco }}" required>
+        
+        <label for="bandeira">Data:</label>
+        <input type="text" name="bandeira" value="{{ item.bandeira }}" required>
+        
+        <label for="lastd">Valor:</label>
+        <input type="text" name="lastd" value="{{ item.lastd }}" required>
+        
+        <label for="limite">Valor:</label>
+        <input type="decimal" name="limite" value="{{ item.limite }}" required>
+        
+        <label for="validade">Valor:</label>
+        <input type="date" name="validade" value="{{ item.validade }}" required>
+        
+        <button type="submit">Salvar</button>
+    </form>
+
+    <form action="{{ url_for('excluir_cc', id=item.idcc) }}" method="post">
+        <button type="submit">Excluir Cartão</button>
+    </form>
+</main>
+
+{% endblock %}

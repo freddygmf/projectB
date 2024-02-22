@@ -1,13 +1,16 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <h2>Logar Usuário</h2>
-    <form action="{{ url_for('autenticar') }}" method="post">
-        <label for="login">Login:</label>
-        <input type="text" id="login" name="login" required><br><br>
-
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required><br><br>
-
-        <input type="submit" value="Logar">
-    </form>
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div class="caixa_link_header">
+        <div><a class="link_header" href="{{ url_for('login') }}">Entrar</a></div>
+        <p class="space"><strong> | </strong></p>
+        <div><a class="link_header" href="{{ url_for('novo_usuario') }}">Cadastrar</a></div>
+    </div>
+</header>
+<main>
+    <h1>{{ nome_pagina }}</h1>
+</main>
 {% endblock %}

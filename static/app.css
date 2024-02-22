@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 * {
   margin: 0;
@@ -40,8 +41,21 @@ footer {
   box-shadow: 0 0 5px black;
 }
 
-strong {
+/* ESTILO DO CONTEÚDO DO HEADER */
+.caixa_link_header{
+  display: flex;
+  gap: 1em;
+  }
+
+.space {
+  font-size: 2em;
   color: green;
+}
+
+.link_header {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
 }
 
 .titulo_projeto {
@@ -49,9 +63,8 @@ strong {
   font-size: 2em;
 }
 
-.nome-pagina {
-  color: white;
-  font-size: 2em;
+.id_projeto {
+  color: green;
 }
 
 .extrato-img {
@@ -78,6 +91,8 @@ strong {
   justify-content: center;
 }
 
+
+/* ESTILIZAÇÃO DO CONTEÚDO DA TABELA */
 table {
   font-family: "Merriweather", serif;
 }
@@ -112,4 +127,57 @@ table {
 .footer-msg {
   font-family: "Merriweather", serif;
   text-align: center;
+}
+
+/* ESTILIZAÇÃO DOS CARTÕES DE CRÉDITOS */
+.display_cc {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.botao_cc {
+  text-decoration: none;
+  color: black;
+}
+
+.caixa_cc {
+  background-color: #CCD3CA;
+  width: 19em;
+  padding: 0.7em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.caixa_info_cc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+.bandeira_cc {
+  font-family: "Merriweather", serif;
+}
+
+.lastd_cc {
+  font-family: "Kode Mono", monospace;
+  font-size: 1.5em;
+}
+
+.caixa_limite_cc {
+  text-align: right;
+}
+
+.caixa_dados_cc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Kode Mono", monospace;
+}
+
+.tipo_limite_cc {
+  font-size: 0.6em;
 }

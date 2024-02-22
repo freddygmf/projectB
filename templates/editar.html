@@ -1,16 +1,29 @@
 {% extends "template.html" %}
 {% block conteudo %}
-<h1>ProjetoB</h1>
-<form action="{{ url_for('editar_item', id=item.id) }}" method="post">
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" value="{{ item.nome }}" required>
-    
-    <label for="dia">Data:</label>
-    <input type="date" name="dia" value="{{ item.dia }}" required>
-    
-    <label for="valor">Valor:</label>
-    <input type="decimal" name="valor" value="{{ item.valor }}" required>
-    
-    <button type="submit">Salvar</button>
-</form>
+
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div class="caixa_link_header">
+        <div><a class="link_header" href="{{ url_for('deslogar') }}">Sair</a></div>
+    </div>
+</header>
+
+<main>
+    <h1>ProjetoB</h1>
+    <form action="{{ url_for('editar_item', id=item.iditem) }}" method="post">
+        <label for="tipo">Nome:</label>
+        <input type="text" name="tipo" value="{{ item.tipo }}" required>
+        
+        <label for="dia">Data:</label>
+        <input type="date" name="dia" value="{{ item.dia }}" required>
+        
+        <label for="valor">Valor:</label>
+        <input type="decimal" name="valor" value="{{ item.valor }}" required>
+        
+        <button type="submit">Salvar</button>
+    </form>
+</main>
+
 {% endblock %}

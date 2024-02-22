@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div class="caixa_link_header">
+        <div><a class="link_header" href="{{ url_for('deslogar') }}">Sair</a></div>
+    </div>
+</header>
+<main>
+    <h1>ProjetoB</h1>
+    <form action="{{ url_for('novo_cc') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="banco">Banco:</label>
+                <input type="text" id="banco" name="banco" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="bandeira">Bandeira do Cartão:</label>
+                <input type="text" id="bandeira" name="bandeira" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lastd">Últimos 4 dígitos do Cartão:</label>
+                <input type="text" id="lastd" name="lastd" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="limite">Limite do Cartão:</label>
+                <input type="decimal" id="limite" name="limite" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="validade">Validade do Cartão:</label>
+                <input type="date" id="validade" name="validade" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+        </fieldset>
+    </form>
+</main>
+{% endblock %}

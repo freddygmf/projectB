@@ -1,7 +1,16 @@
 {% extends "template.html" %}
 {% block conteudo %}
-    <h2>Criar Usuário</h2>
-    <form action="{{ url_for('new_user') }}" method="post">
+<header>
+    <div class="titulo_projeto">
+        <p>Project<strong class="id_projeto">B</strong></p>
+    </div>
+    <div class="caixa_link_header">
+        <div><a class="link_header" href="{{ url_for('login') }}">Entrar</a></div>
+    </div>
+</header>
+<main>
+    <h1>{{ nome_pagina }}</h1>
+    <form action="{{ url_for('index') }}" method="post">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -22,4 +31,5 @@
 
         <input type="submit" value="Criar">
     </form>
+</main>
 {% endblock %}
